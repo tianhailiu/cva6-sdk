@@ -1,0 +1,36 @@
+From 836cf61fefaeda4a34ca862376af7f97047fe74d Mon Sep 17 00:00:00 2001
+From: Tianhai Liu <liu@aicas.de>
+Date: Wed, 8 Apr 2026 15:09:39 +0200
+Subject: [PATCH] Update vitetris for risc-v image, kernel, and library build
+
+---
+ config.mk       | 2 +-
+ src/src-conf.mk | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/config.mk b/config.mk
+index 4c80870..ad24983 100644
+--- a/config.mk
++++ b/config.mk
+@@ -12,7 +12,7 @@ datadir = $(datarootdir)/allegro
+ #datadir = $(datarootdir)/allegro/vitetris
+ 
+ UNIX = y
+-CC = riscv64-unknown-linux-gnu-gcc
++CC = /home/liu/projects/tristan/cva6-sdk/buildroot/output/host/bin/riscv64-buildroot-linux-gnu-gcc
+ 
+ TWOPLAYER = y
+ #JOYSTICK = y
+diff --git a/src/src-conf.mk b/src/src-conf.mk
+index 9dbc738..9de2f01 100644
+--- a/src/src-conf.mk
++++ b/src/src-conf.mk
+@@ -1,4 +1,4 @@
+-CC = riscv64-unknown-linux-gnu-gcc
++CC = /home/liu/projects/tristan/cva6-sdk/buildroot/output/host/bin/riscv64-buildroot-linux-gnu-gcc
+ CCFLAGS = $(CFLAGS) $(CPPFLAGS)
+ #CFLAGS = -O2 -Wall -pedantic -Wno-parentheses
+ CFLAGS = -O2
+-- 
+2.43.0
+
